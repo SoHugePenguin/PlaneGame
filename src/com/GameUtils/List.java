@@ -6,12 +6,16 @@ import com.PlaneGame;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Objects;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class List {
-    public static Image bg,sun,p1,p2,p3,p4,p5,p6,p7,p8,shell,shell2,heart;
-//图片资源获取
+    public static Image bg, sun, p1, p2, p3, p4, p5, p6, p7, p8, shell, shell2, heart;
+    //游戏物的集合
+    public static CopyOnWriteArrayList<GameObj> gameObjs = new CopyOnWriteArrayList<>();
+    //CopyOnWriteArrayList应对多线程的时对数组修改会产生的越界报错现象ConcurrentModificationException
+
+    //图片资源获取
     static {
         try {
             bg = ImageIO.read(Objects.requireNonNull(PlaneGame.class.getClassLoader().getResource("resources/bg.png")));
@@ -31,10 +35,4 @@ public class List {
             throw new RuntimeException(e);
         }
     }
-    //游戏物的集合
-    public static ArrayList<GameObj> gameObjs = new ArrayList<>();
-    //删除元素的集合
-    public static ArrayList<GameObj> Delete_Obj = new ArrayList<>();
-    //敌机集合
-    public static ArrayList<GameObj> EnemyObjs = new ArrayList<>();
 }

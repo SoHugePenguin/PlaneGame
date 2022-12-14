@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="全民飞机大战低配版:jar">
     <output-path>$USER_HOME$/Desktop</output-path>
-    <root id="archive" name="全民飞机大战低配版V1.0.5.jar">
+    <root id="archive" name="全民飞机大战低配版V1.0.6.jar">
       <element id="module-output" name="Learn_Test" />
     </root>
   </artifact>
